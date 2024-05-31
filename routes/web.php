@@ -33,5 +33,9 @@ Route::get("/watch", [WatchController::class, "show"]);
 
 Route::get("/watch/{videoid}/{resolution}/{filename}", [VideoController::class, "show"]);
 Route::get("/watch/{videoid}/{filename}", [VideoController::class, "showPlaylist"]);
+Route::get("/api/watch/liked", [WatchController::class, "videoLiked"]);
+Route::get("/api/watch/disliked", [WatchController::class, "videoDisliked"]);
+Route::get("/api/watch/like_rem_row", [WatchController::class, "deleteLikeRow"]);
+Route::post("/api/watch/report_video", [WatchController::class, "videoReported"]);
 
 Route::view("/login", "login");

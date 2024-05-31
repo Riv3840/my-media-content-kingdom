@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('video_views', function (Blueprint $table) {
+        Schema::create('video_reports', function (Blueprint $table) {
             $table->id();
-            $table->integer("user_id");
-            $table->integer("video_id");
-            $table->integer("amount");
+            $table->integer('video_id');
+            $table->integer('user_id');
+            $table->integer('reason_id');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('video_views');
+        Schema::dropIfExists('video_reports');
     }
 };
